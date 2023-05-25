@@ -1,0 +1,9 @@
+<ng-container >
+  <div class="container">
+    <div class="gallery">
+        <figure *ngFor="let cat of cats$ | async; let i = index" class="gallery__item gallery__item--{{i+1}}">
+            <img [src]="cat.url" alt="Gallery image {{i+1}}" class="gallery__img">
+        </figure>
+    </div>
+  </div>
+</ng-container>
