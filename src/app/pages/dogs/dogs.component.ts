@@ -1,12 +1,15 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { DogsService } from './dogs.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-dogs',
   templateUrl: './dogs.component.html',
-  styleUrls: ['./dogs.component.scss']
+  styleUrls: ['./dogs.component.scss'],
+  standalone: true,
+  imports : [ CommonModule,]
 })
-export class DogsComponent implements OnInit {
+export default class DogsComponent implements OnInit {
   private readonly dogsService = inject(DogsService);
   dogs$ = this.dogsService.dogs$;
 
